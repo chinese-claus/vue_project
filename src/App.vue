@@ -47,9 +47,18 @@
          		this.$router.go(-1);
  			}
 	  	},
-	  	created(){
-	  		
-	  	},
+	  	mounted(){
+		setTimeout(function(){
+				var newarr=localgetItem();
+			this.list=newarr;
+			let sum=0;
+			for(var i=0;i<newarr.length;i++){
+				var arr=newarr[i];
+				sum=arr.count+sum;
+			}
+			this.num1=sum;
+		},1)
+		},
 	  	 watch:{
          '$route':function(newroute,oldroute){
                  if(newroute.path.toLowerCase() == '/home'){
