@@ -8,7 +8,7 @@
 				</div>
 				<div>
 				<h4>删除</h4>
-				<div>
+				<div :id="'item'+item.id">
 					<mt-switch v-model="value" @change="turn"></mt-switch>
 				</div>
 				<div class="clear _shop_car_right">
