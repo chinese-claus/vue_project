@@ -72,7 +72,28 @@ import {localgetItem} from '../../localstorage.js'
 	}
 </script>
 
-<style>
+<style scoped>
+        @media screen and (device-width: 320px){
+             html {
+                font-size: 16px;
+            }
+        }
+        @media screen and (device-width: 360px){
+            html {
+                font-size: 18px;
+            }
+        }
+        @media screen and (device-width: 375px){
+            html {
+                font-size: 18.75px;
+            }
+        }
+        @media screen and (device-width: 414px){
+            html {
+                font-size: 20.7px;
+            }
+        }
+	
 	* {
 		list-style:none;
 		box-sizing:border-box;
@@ -86,34 +107,34 @@ import {localgetItem} from '../../localstorage.js'
   		clear: both;
 	}
 	.title {
-		border-bottom:1px solid #8080855c;
-		margin-bottom:10px;
+		border-bottom:0.0625rem solid #8080855c;
+		margin-bottom:0.625rem;
 
 	}
 	.clear>h4 {
 		display:inline-block;
-		font-size:11px;
+		font-size:0.6875rem;
 		color:#0000ff8a;
 		font-weight:normal;
 	}
 	._soncar {
-	border-bottom:1px solid #8080855c;
-	padding:3px 0;
+	border-bottom:0.0625rem solid #8080855c;
+	padding:0.1875rem 0;
 	position:relative;
 	}
 	._soncar>div:first-child{
-		padding:0 10px;
+		padding:0 0.625rem;
 
 	}
 	._soncar div span {
-		padding:3px 2px;
+		padding:0.1875rem 0.125rem;
 		float:right;
-		border-left:1px solid #8080855c;
+		border-left:0.0625rem solid #8080855c;
 	}
 	._soncar div span a {
 		color:#b1becc;
-		font-size:14px;
-		border:1px solid gray;
+		font-size:0.875rem;
+		border:0.0625rem solid gray;
 		cursor:pointer;
 	}
 	._soncar div span a:hover {
@@ -122,11 +143,11 @@ import {localgetItem} from '../../localstorage.js'
 	 ._soncar>div:last-child ul{
 	 	float:right;
 	 	color:#8080855c;
-	 	font-size:14px;
-	 	margin-right:10px;
+	 	font-size:0.875rem;
+	 	margin-right:0.625rem;
 	 }
 	 ._soncar>div:last-child ul>li:last-child {
-	 	padding-left:4px;
+	 	padding-left:0.25rem;
 	 }
 	 ._soncar>div:last-child ul>li:first-child {
 	 	color:red;
@@ -137,30 +158,30 @@ import {localgetItem} from '../../localstorage.js'
 ._soncar>.mint-switch {
 	display:inline-block;
 	position:absolute;
-	top:60px;
-	left:10px;
+	top:3.75rem;
+	left:0.625rem;
 }
-tmp1>shopcar #tmp3{
-	poistion:absolute;
-	top:70px;
+#tmp1>.shopcar #tmp3{
+	position:absolute;
+	top:4.375rem;
 }
-shopcar>_soncar>_shop_car_right {
+.shopcar>._soncar>._shop_car_right {
 	
-	padding:10px 0;
+	padding:0.625rem 0;
 }
-#tmp3[data-v-aa0fcd5a] {
+#tmp3{
     display: inline-block;
     position: relative;
-    top: 27px;
-    left: -20px;
+    top: 1.6875rem;
+    left: 10rem;
 }
 ._shop_car_right img {
 	  display:inline-block;
-	  width:60px;
-	  height:60px;
+	  width:3.75rem;
+	  height:3.75rem;
 	  position:absolute;
-	  top:34px;
-	  left:77px;
+	  top:2.125rem;
+	  left:4.8125rem;
 	  	  }
 </style>
 
