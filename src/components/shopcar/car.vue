@@ -8,7 +8,7 @@
 				</div>
 				<div>
 				<h4>删除</h4>
-				<div>
+				<div :id="'item'+item.id">
 					<mt-switch v-model="value" @change="turn"></mt-switch>
 				</div>
 				<div class="clear _shop_car_right">
@@ -72,27 +72,28 @@ import {localgetItem} from '../../localstorage.js'
 	}
 </script>
 
-<style>
-	 @media screen and (device-width: 320px){
-            html{
+<style scoped>
+        @media screen and (device-width: 320px){
+             html {
                 font-size: 16px;
             }
         }
         @media screen and (device-width: 360px){
-            html{
+            html {
                 font-size: 18px;
             }
         }
         @media screen and (device-width: 375px){
-            html{
+            html {
                 font-size: 18.75px;
             }
         }
         @media screen and (device-width: 414px){
-            html{
+            html {
                 font-size: 20.7px;
             }
         }
+	
 	* {
 		list-style:none;
 		box-sizing:border-box;
@@ -112,12 +113,12 @@ import {localgetItem} from '../../localstorage.js'
 	}
 	.clear>h4 {
 		display:inline-block;
-		font-size:0.875rem;
+		font-size:0.6875rem;
 		color:#0000ff8a;
 		font-weight:normal;
 	}
 	._soncar {
-	border-bottom:1px solid #8080855c;
+	border-bottom:0.0625rem solid #8080855c;
 	padding:0.1875rem 0;
 	position:relative;
 	}
@@ -128,7 +129,7 @@ import {localgetItem} from '../../localstorage.js'
 	._soncar div span {
 		padding:0.1875rem 0.125rem;
 		float:right;
-		border-left:1px solid #8080855c;
+		border-left:0.0625rem solid #8080855c;
 	}
 	._soncar div span a {
 		color:#b1becc;
@@ -158,21 +159,21 @@ import {localgetItem} from '../../localstorage.js'
 	display:inline-block;
 	position:absolute;
 	top:3.75rem;
-	left: 0.625rem;;
+	left:0.625rem;
 }
-tmp1>shopcar #tmp3{
-	poistion:absolute;
+#tmp1>.shopcar #tmp3{
+	position:absolute;
 	top:4.375rem;
 }
-shopcar>_soncar>_shop_car_right {
+.shopcar>._soncar>._shop_car_right {
 	
 	padding:0.625rem 0;
 }
-#tmp3[data-v-aa0fcd5a] {
+#tmp3{
     display: inline-block;
     position: relative;
     top: 1.6875rem;
-    left: -1.25rem;
+    left: 10rem;
 }
 ._shop_car_right img {
 	  display:inline-block;
@@ -180,7 +181,7 @@ shopcar>_soncar>_shop_car_right {
 	  height:3.75rem;
 	  position:absolute;
 	  top:2.125rem;
-	  left: 4.8125rem;;
+	  left:4.8125rem;
 	  	  }
 </style>
 
