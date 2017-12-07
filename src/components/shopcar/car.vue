@@ -13,7 +13,7 @@
 				</div>
 				<div class="clear _shop_car_right">
 				<img :src="item.thumb_path">
-					<choosequan></choosequan>
+					<choosequan :num="res"></choosequan>
 					<ul>
 						<li>热卖中</li>
 						<li>￥:{{item.sell_price}}</li>
@@ -49,7 +49,6 @@ import {localgetItem} from '../../localstorage.js'
    		 		this.$http.get(url).then(function(res){
 				const argu=res.body.message;
 				this.list=argu;
-				console.log(this.list);
 			})
    		 	}  
   		}, 
