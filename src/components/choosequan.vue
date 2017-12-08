@@ -33,8 +33,7 @@
             		this.$emit('send',this.num)
     			}
 
-			},
-			props:['num']
+			}
 	}
 </script>
 

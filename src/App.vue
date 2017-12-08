@@ -1,7 +1,7 @@
 <!-- 以后项目的根组件 -->
 <template>
 	<div id="tmp1">
-		<mt-header fixed title="Vue商城系统"></mt-header>
+		<mt-header fixed title="轻松购"></mt-header>
 		<span @click="backto" v-show="isshow">&lt;</span>
 		<router-view></router-view>
 		<nav class="mui-bar mui-bar-tab">
@@ -31,6 +31,7 @@
 
 <script>
 	import {vm,_num} from './vm.js';
+	import {localgetItem} from './localstorage.js';
 	vm.$on(_num,function(data){
          var span_box=document.querySelector(".mui-badge");
          span_box.innerHTML=parseInt(span_box.innerHTML||0)+data;
@@ -73,6 +74,10 @@
 </script>
 
 <style scoped>
+	.mint-header {
+		background-color:gray;
+		opacity: 0.5;
+	}
 	.red{
 		color: red;
 	}

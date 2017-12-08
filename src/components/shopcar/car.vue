@@ -1,7 +1,7 @@
 <template>
 	<div id="tmp1">
 		<div class="shopcar">
-			<div class="_soncar clear" v-for="item in list">
+			<div class="_soncar clear"  v-for="(index,item) in list">
 				<div class="clear title">
 					<h4>{{item.title}}</h4>
 					<span><a href="javascript:;">编辑</a><a href="javascript:;">完成</a></span>
@@ -9,11 +9,11 @@
 				<div>
 				<h4>删除</h4>
 				<div :id="'item'+item.id">
-					<mt-switch v-model="value" @change="turn"></mt-switch>
+					<mt-switch @change="turn" class="switch" v-model="value[index]"></mt-switch>
 				</div>
 				<div class="clear _shop_car_right">
 				<img :src="item.thumb_path">
-					<choosequan :num="res"></choosequan>
+					<choosequan></choosequan>
 					<ul>
 						<li>热卖中</li>
 						<li>￥:{{item.sell_price}}</li>
@@ -29,9 +29,10 @@
 
 <script scoped>
 import Vue from 'vue';
-import { Switch } from 'mint-ui';
-import choosequan from '../choosequan.vue';
-import {localgetItem} from '../../localstorage.js'
+// import { Switch } from 'mint-ui';
+import {getAjax} from '../../ajax.js';
+import choosequan from '../choosequan.vue'; //引入choosequan组件
+import {localgetItem} from '../../localstorage.js' //引入本地存储获取脚本
 	export default{
 		data(){
 			return {
@@ -43,16 +44,18 @@ import {localgetItem} from '../../localstorage.js'
 		methods:{  
    			 turn:function(){  
         		console.log(this.value)  
-   		 	},
-   		 	getcardata:function(){
-   		 		var url=this.$domain.apidomain +'/api/goods/getshopcarlist/'+this.id;
-   		 		this.$http.get(url).then(function(res){
-				const argu=res.body.message;
-				this.list=argu;
-			})
-   		 	}  
+   		 	}
+   		 	// getcardata:function(){ //获取本地存储的商品id以及数目  并且将获取的id作为请求的参数
+   		 	// 	var url=this.$domain.apidomain +'/api/goods/getshopcarlist/'+this.id;
+   		 	// 	this.$http.get(url).then(function(res){
+			// 	const argu=res.body.message;
+			// 	this.list=argu;
+			// })
+				// } 
+			
+				
   		}, 
-		mounted(){
+		mounted(){//本地存储商品数据的获取
 			var newarr=localgetItem();
 			this.list=newarr;
 			for(var i=0;i<newarr.length;i++){
@@ -60,9 +63,9 @@ import {localgetItem} from '../../localstorage.js'
 				this.id=this.id+arr.id+',';
 			}
 			this.id=this.id.substring(0,this.id.length-1);
-			this.getcardata();
-			var btnlist=document.querySelectorAll(".title .mint-switch");
-			console.log(btnlist);
+			// this.getcardata();
+			console.log(this.id);
+			console.log(getAjax('/api/goods/getshopcarlist/',this.id));
 		},
 		components:{
 			choosequan
