@@ -58,7 +58,7 @@
 				sum=arr.count+sum;
 			}
 			this.num1=sum;
-		},1)
+		},10)
 		},
 	  	 watch:{
          '$route':function(newroute,oldroute){

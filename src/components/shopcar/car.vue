@@ -63,9 +63,9 @@ import {localgetItem} from '../../localstorage.js' //引入本地存储获取脚
 				this.id=this.id+arr.id+',';
 			}
 			this.id=this.id.substring(0,this.id.length-1);
-			// this.getcardata();
-			console.log(this.id);
-			console.log(getAjax('/api/goods/getshopcarlist/',this.id));
+			if(newarr.length>0){
+				console.log('getAjax--'+getAjax('/api/goods/getshopcarlist/',this.id));
+			}
 		},
 		components:{
 			choosequan

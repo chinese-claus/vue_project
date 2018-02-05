@@ -4,13 +4,18 @@ Vue.use(vueresource);
 let vue=new Vue();
 let url='http://www.lovegf.cn:8899';
 export function getAjax(getstr,argu_one){//关于数据请求get
-    let argu=0;
+    var argu=0;
     let get_url=url +getstr+argu_one; 
     vue.$http.get(get_url).then(function(res){
         argu=res.body.message;
+        console.log(argu);
     })
-    return argu
+   setTimeout(function(){
+        // return argu;
+        console.log(23);
+   },5000)
 }
+
 export function postAjax(poststr,argu_two){
     //关于数据请求get
     let argu=0;

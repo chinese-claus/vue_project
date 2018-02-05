@@ -64,7 +64,9 @@ import '../statics/css/site.css';
 
 import domain from './domain/domain.js';
 Vue.prototype.$domain=domain;
-Vue.filter('changedate',function(input,str){
+
+
+Vue.filter('changedate',function(input,str){//定义评论区时间过滤器
 	return moment(input).format(str);
 })
 // 5.0 利用Vue对象进行解析渲染
