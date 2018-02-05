@@ -74,6 +74,9 @@
 </script>
 
 <style scoped>
+	html {
+		font-size: 20px;
+	}
 	.mint-header {
 		background-color:gray;
 		opacity: 0.5;
